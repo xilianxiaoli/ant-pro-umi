@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {connectFormWithPreProps} from '../utils/hoc'
 import { Form, Icon, Input, Button } from 'antd';
+import { router } from 'umi'; 
 
 function hasErrors(fieldsError) {
     return Object.keys(fieldsError).some(field => fieldsError[field]);
@@ -22,6 +23,11 @@ class My extends Component {
           }
         });
       };
+
+      go = ()=>{
+        router.push('/admin/sub-page')
+        
+      }
 
 
     render() {
@@ -61,6 +67,7 @@ class My extends Component {
                 Log in
               </Button>
             </Form.Item>
+            <div onClick={this.go}>click</div>
           </Form>
         );
       }

@@ -5,6 +5,7 @@ let CURRENT = 'NULL';
 
 /**
  * use  authority or getAuthority
+ * 为了给全局的当前用户的权限对象赋值 CURRENT
  * @param {string|()=>String} currentAuthority
  */
 const renderAuthorize = Authorized => currentAuthority => {

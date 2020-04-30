@@ -16,6 +16,7 @@ const Model = {
         payload: response,
       }); // Login successfully
 
+      // 登录成功修改缓存中的权限值
       if (response.status === 'ok') {
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();

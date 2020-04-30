@@ -28,15 +28,13 @@ const noMatch = (
 
 /**
  * use Authorized check all menu item
+ * // 是否可以在这里根据权限过滤菜单列表
  */
 const menuDataRender = menuList => {
-  console.log(menuList)
   const aa =  menuList.map(item => {
-    // console.log(item)
     const localItem = { ...item, children: item.children ? menuDataRender(item.children) : [] };
     return Authorized.check(item.authority, localItem, null);
   })
-  console.log(aa)
   return aa
 };
 
@@ -127,6 +125,7 @@ const BasicLayout = props => {
   const authorized = getAuthorityFromRouter(props.route.routes, location.pathname || '/') || {
     authority: undefined,
   };
+  
   return (
     <ProLayout
       logo={logo}

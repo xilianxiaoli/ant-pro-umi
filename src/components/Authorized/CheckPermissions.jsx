@@ -4,7 +4,7 @@ import { CURRENT } from './renderAuthorize'; // eslint-disable-next-line import/
 import PromiseRender from './PromiseRender';
 
 /**
- * 通用权限检查方法
+ * 通用权限检查方法 对路由进行权限校验
  * Common check permissions method
  * @param { 权限判定 | Permission judgment } authority
  * @param { 你的权限 | Your permission description } currentAuthority
@@ -70,6 +70,7 @@ const checkPermissions = (authority, currentAuthority, target, Exception) => {
 export { checkPermissions };
 
 function check(authority, target, Exception) {
+  
   return checkPermissions(authority, CURRENT, target, Exception);
 }
 

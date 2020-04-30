@@ -68,6 +68,7 @@ if (isAntDesignProPreview) {
   plugins.push(['umi-plugin-antd-theme', themePluginConfig]);
 }
 
+// 这里采用了配置化组件
 export default {
   plugins,
   hash: true,
